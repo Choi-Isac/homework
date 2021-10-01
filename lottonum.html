@@ -9,12 +9,22 @@
 <body>
     <script>
         let lotto = new Array();
-        for(let i=0; i<6; i++){
-            lotto[i] = Math.floor(Math.random()*45)+1;
+        let cnt;    // 중복 확인
+        while(true){
+            cnt = 0;
+            for(let i=0; i<6; i++){
+                lotto[i] = Math.floor(Math.random()*45)+1;
+            }
+            lotto.sort(function(a,b){
+                return a - b;
+            })
+            for(let i=0; i<6; i++){
+                for(let j=i+1; j<6; j++){
+                    if(lotto[i]==lotto[j]) cnt++;
+                }
+            }
+            if(cnt==0) break;
         }
-        lotto.sort(function(a,b){
-            return a - b;
-        })
         document.write("<p>오늘의 예측 로또번호</p>");
         document.write(`<p>${lotto.join(" ")}</p>`);
     </script>
