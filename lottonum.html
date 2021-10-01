@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 예측기</title>
+</head>
+<body>
+    <script>
+        let lotto = new Array();
+        for(let i=0; i<6; i++){
+            lotto[i] = Math.floor(Math.random()*45)+1;
+        }
+        lotto.sort(function(a,b){
+            return a - b;
+        })
+        document.write("<p>오늘의 예측 로또번호</p>");
+        document.write(`<p>${lotto.join(" ")}</p>`);
+    </script>
+</body>
+</html>
