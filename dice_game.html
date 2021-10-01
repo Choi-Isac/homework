@@ -7,23 +7,24 @@
     <title>주사위 게임</title>
 </head>
 <body>
+    <script>
+        'use strict';
+        console.log("
     <h2>주사위 게임</h2>
     <h6>(f12의 console창에서 확인해주세요)</h6>
     <h4>하는 방법: </h4>
     <p>- 알림창에 1~6까지의 숫자 입력</p>
     <p>- 입력한 숫자와 주사위의 숫자가 일치하면 성공!</p>
-    <p>- 일치하지 않으면 다시!</p>
+    <p>- 일치하지 않으면 다시!</p>")
+        let dice, ans;
+        while(true){
+            dice = Math.floor(Math.random()*6)+1;
+            ans = Number(prompt("숫자를 입력해주세요.(1~6)"));
+            console.log(`입력 : ${ans}`);
+            if(dice==ans) break;
+            console.log(`오답입니다. 정답은 ${dice}입니다.`);
+        }
+        console.log("정답입니다!");
+    </script>
 </body>
-<script>
-    'use strict';
-    let dice, ans;
-    while(true){
-        dice = Math.floor(Math.random()*6)+1;
-        ans = Number(prompt("숫자를 입력해주세요.(1~6)"));
-        console.log(`입력 : ${ans}`);
-        if(dice==ans) break;
-        console.log(`오답입니다. 정답은 ${dice}입니다.`);
-    }
-    console.log("정답입니다!");
-</script>
 </html>
